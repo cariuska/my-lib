@@ -5,9 +5,10 @@ with open("README.md", "r") as fh:
 
 setup(
     name="my-lib-teste",
-    version="0.0.2",
+    version="0.0.3",
     author="Thiago Cariuska",
     python_requires='>=3.8.0',
+    long_description=long_description,
     install_requires=[
         "requests"
     ],
