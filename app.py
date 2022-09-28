@@ -25,6 +25,10 @@ def insert_db(pagina):
 
 def select_db():
     conn = conexao()
+    sql = f"select * from logs"
+    cursor = conn.execute(sql)
+    return cursor
+    
     
 
 def home(request):
@@ -68,6 +72,17 @@ def quotes_random(request):
     return Response(html)
 
 
+
+def logs(request):
+    cursor = select_db()
+    json = { "rows": []}
+    for row in cursor:
+        json["rows"].append({
+            "data_hora": row[0],
+            "pagina": row[1]
+        })
+    return json
+
 cria_db()
 
 #if __name__ == '__main__':
@@ -76,10 +91,12 @@ with Configurator() as config:
     config.add_route('quotes', '/quotes')
     config.add_route('quote', '/quote/{quote_number}')
     config.add_route('random', '/quotes/random')
+    config.add_route('logs', '/api/logs')
     config.add_view(home, route_name='home')
     config.add_view(quotes, route_name='quotes')
     config.add_view(quote, route_name='quote')
     config.add_view(quotes_random, route_name='random')
+    config.add_view(logs, route_name='logs', renderer="json")
     app = config.make_wsgi_app()
 server = make_server('0.0.0.0', 6543, app)
 server.serve_forever()
