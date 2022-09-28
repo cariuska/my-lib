@@ -10,5 +10,5 @@ setup(
     ],
     extras_require={
     },
-    py_modules=['mylib']
+    package_dir=['mylib']
 )
