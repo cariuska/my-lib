@@ -1,4 +1,2 @@
 
-
-def console(self, text):
-    print(text)
+from .console import log
