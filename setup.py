@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="my-lib",
+    name="mylib",
     version="0.0.1",
     packages=[],
     python_requires='>=3.6.0',
