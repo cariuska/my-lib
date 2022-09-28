@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="mylib",
+    name="my-lib",
     version="0.0.1",
     packages=[],
     python_requires='>=3.6.0',
@@ -9,10 +9,5 @@ setup(
         "requests"
     ],
     extras_require={
-        'dev': [
-            "pep8",
-            "autopep8",
-            "pylint",
-        ]
     }
 )
