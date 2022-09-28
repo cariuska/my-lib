@@ -9,5 +9,5 @@ setup(
     ],
     extras_require={
     },
-    packages=['mylib', 'maylib.console']
+    packages=['mylib', 'mylib.console']
 )
