@@ -10,5 +10,6 @@ setup(
     ],
     extras_require={
     },
-    package_dir=['mylib']
+    packages=find_packages(include=['mylib', 'mylib.*']),
+
 )
