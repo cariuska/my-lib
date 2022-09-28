@@ -1,4 +1,4 @@
 
 
-def log(self, text):
+def log(text):
     print(text)
