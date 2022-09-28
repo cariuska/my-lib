@@ -9,5 +9,6 @@ setup(
         "requests"
     ],
     extras_require={
-    }
+    },
+    py_modules=['mylib']
 )
